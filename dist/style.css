@@ -1,0 +1,17 @@
+li {
+  font-size: 3rem;
+}
+
+.hotpink {
+  background-color: hotpink;
+}
+
+.green {
+  background-color: chartreuse;
+}
+
+.btn {
+  font-size: 3rem;
+  padding: 2rem;
+  transition: 300ms;
+}
