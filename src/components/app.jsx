@@ -42,24 +42,6 @@ class App extends React.Component {
     }
   }
 
-  // addToDo(item) {
-  //   fetch('http://api.reactprototypes.com/todos?key=m0120demouser', {
-  //     method: 'POST',
-  //     body: JSON.stringify({})
-  //   }).then(resp => {
-  //     if(resp.status > 201) {
-  //       throw new Error('Failed to add to do item');
-  //     }
-
-  //     return resp.json()
-  //   }).then( data => {
-  //     console.log('Add Data:', data);
-  //     this.getToDos();
-  //   }).catch( error => {
-  //     console.log('Caught Error:', error);
-  //   });
-  // }
-
   async getToDos() {
     const resp = await fetch('http://api.reactprototypes.com/todos?key=m0120demouser');
     const data = await resp.json();
@@ -70,26 +52,20 @@ class App extends React.Component {
     });
   }
 
-  // getToDos() {
-  //   fetch('http://api.reactprototypes.com/todos?key=m0120demouser').then(resp => {
-  //     return resp.json();
-  //   }).then(data => {
-  //     console.log('Data:', data.todos);
-  //     this.setState({
-  //       list: data.todos
-  //     });
-  //   });
-  // }
-
   render() {
     const { error, list } = this.state; 
 
     return (
-      <div>
-        <h1>To Do List</h1>
-        <ToDoList list={list} />
-        <AddToDoForm add={this.addToDo} />
-        <h1>{error}</h1>
+      <div className="container">
+        <h1 className="text-center my-4">To Do List</h1>
+        <div className="row">
+          <div className="col-md-8">
+            <ToDoList list={list} />
+          </div>
+          <div className="col-md-4">
+            <AddToDoForm add={this.addToDo} />
+          </div>
+        </div>
       </div>
     );
   }

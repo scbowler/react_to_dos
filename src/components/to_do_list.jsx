@@ -7,7 +7,7 @@ function ToDoList(props) {
   });
 
   return (
-    <ol>
+    <ol className="list-group">
       {toDoElements}
     </ol>
   );
